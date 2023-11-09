@@ -20,6 +20,7 @@ jobs:
         with:
           version: "v0.20.0"
           config: "kind-action/manifests/kind-k8sdev-no-cni.yaml"
+          cluster_name: 'k8sdev'
       - name: Check kind cluster
         run: |
           ls -lat /
@@ -28,4 +29,4 @@ jobs:
           kind get clusters || true
           kubectl cluster-info --context kind-k8sdev || true
           kubectl config get-contexts || true
-          kubectl --context k8sdev get nodes || true
+          kubectl --context kind-k8sdev get nodes || true
