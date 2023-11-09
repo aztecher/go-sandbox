@@ -18,7 +18,7 @@ jobs:
       - name: Setup kind cluster
         uses: helm/kind-action@v1.5.0
       - name: Check kind cluster
-        run:
+        run: |
           ls -lat /
           which kind || true
           which kubectl || true
