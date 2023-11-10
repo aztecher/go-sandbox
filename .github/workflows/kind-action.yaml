@@ -30,3 +30,6 @@ jobs:
           kubectl cluster-info --context kind-k8sdev || true
           kubectl config get-contexts || true
           kubectl --context kind-k8sdev get nodes || true
+      - name: Check workflow system
+        run: |
+          ip addr
